@@ -52,44 +52,80 @@
   // Start things up
   themesflatTheme.init();
 
+  // var headerFixed = function () {
+  //   let lastScrollTop = 0;
+  //   let delta = 5;
+  //   let navbarHeight = $("header").outerHeight();
+  //   let didScroll = false;
+
+  //   $(window).scroll(function () {
+  //     didScroll = true;
+  //   });
+
+  //   setInterval(function () {
+  //     if (didScroll) {
+  //       let st = $(window).scrollTop();
+  //       navbarHeight = $("header").outerHeight();
+
+  //       if (st > navbarHeight) {
+  //         $("header").addClass("fixed");
+  //       }else {
+  //         $("header").removeClass("fixed");
+  //       }
+
+  //       if (st > navbarHeight) {
+  //         if (st > lastScrollTop + delta) {
+  //           // $("header").css("top", `-${navbarHeight}px`);
+  //         } else if (st < lastScrollTop - delta) {
+  //           $("header").css("top", "0");
+  //           $("header").addClass("is-small");
+  //         }
+  //       } else {
+  //         $("header").css("top", "unset");
+  //         $("header").removeClass("is-small");
+  //       }
+  //       lastScrollTop = st;
+  //       didScroll = false;
+  //     }
+  //   }, 250);
+  // };
+
   var headerFixed = function () {
-    let lastScrollTop = 0;
-    let delta = 5;
-    let navbarHeight = $("header").outerHeight();
-    let didScroll = false;
+    if ($("header").hasClass("header-fixed")) {
+      var nav = $("#header");
 
-    $(window).scroll(function () {
-      didScroll = true;
-    });
+      if (nav.length) {
+        var offsetTop = nav.offset().top,
+          headerHeight = nav.height(),
+          injectSpace = $("<div>", {
+            height: headerHeight,
+          });
+        injectSpace.hide();
 
-    setInterval(function () {
-      if (didScroll) {
-        let st = $(window).scrollTop();
-        navbarHeight = $("header").outerHeight();
-
-        if (st > navbarHeight) {
-          $("header").addClass("fixed");
-        }else {
-          $("header").removeClass("fixed");
-        }
-
-        if (st > navbarHeight) {
-          if (st > lastScrollTop + delta) {
-            $("header").css("top", `-${navbarHeight}px`);
-          } else if (st < lastScrollTop - delta) {
-            $("header").css("top", "0");
-            $("header").addClass("is-small");
-          }
+        if ($("header").hasClass("style-absolute")) {
+          injectSpace.hide();
         } else {
-          $("header").css("top", "unset");
-          $("header").removeClass("is-small");
+          injectSpace.insertAfter(nav);
         }
-        lastScrollTop = st;
-        didScroll = false;
-      }
-    }, 250);
-  };
 
+        $(window).on("load scroll", function () {
+          if ($(window).scrollTop() > 0) {
+            nav.addClass("is-fixed");
+            injectSpace.show();
+          } else {
+            nav.removeClass("is-fixed");
+            injectSpace.hide();
+          }
+
+          if ($(window).scrollTop() > 150) {
+            nav.addClass("is-small");
+          } else {
+            nav.removeClass("is-small");
+          }
+        });
+      }
+    }
+  };
 
 
   //Submenu Dropdown Toggle
