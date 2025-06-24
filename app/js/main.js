@@ -475,6 +475,18 @@
     }
   };
 
+  var autoPopup = function () {
+    if ($("#pop-up").length > 0) {
+        setTimeout(function () {
+            $("#pop-up").addClass("show");
+        }, 3000);
+        
+        $(".close-pop-up").on("click", function () {
+          $("#pop-up").removeClass("show");
+        });
+    }
+  };
+
   // Dom Ready
   $(function () {
     goTop();
@@ -485,6 +497,7 @@
     counter();
     heightitem();
     infiniteSlide();
+    autoPopup();
     removePreloader();
   });
 

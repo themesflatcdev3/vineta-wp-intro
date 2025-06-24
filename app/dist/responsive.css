@@ -363,6 +363,13 @@
 }
 
 @media only screen and (max-width: 767px) {
+    #pop-up .close-icon {
+        top: 15px;
+        right: 15px;
+    }
+    #pop-up .close-icon svg {
+        width: 16px;
+    }
     .slider .bot-icon img {
         width: 60px;
         height: 60px;
