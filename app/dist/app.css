@@ -3511,3 +3511,189 @@ footer .copyright a:hover {
     object-fit: cover;
     border-radius: 28px;
 }
+
+.tf-section4 {
+    padding: 130px 0;
+    position: relative;
+}
+
+/* mailchimp */
+.section-mailchimp > .item-1 {
+    position: absolute;
+    width: 118px;
+    top: 92px;
+    left: 50%;
+}
+
+.section-mailchimp > .item-2 {
+    position: absolute;
+    width: 246px;
+    right: 69px;
+    top: 69px;
+}
+
+.mailchimp-wrap {
+    padding: 104px 15px;
+    border-radius: 30px;
+    border: 1px solid #FFFFFF33;
+    background-image: url(../../assets/images/bg/bg-mailchimp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 5;
+}
+
+.mailchimp-wrap .sib-form {
+    max-width: 504px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .tf-section4 {
+        padding: 100px 0;
+    }
+    .mailchimp-wrap {
+        padding: 54px 15px;
+    }
+    #sib-form .sib-form-block__button {
+        padding: 12px 24px;
+    }
+}
+
+/* sib-form */
+.sib-form {
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+#sib-container {
+    background-color: unset;
+    padding: 0;
+}
+
+.sib-form .entry__field {
+    background-color: unset;
+    border: 0;
+    box-shadow: none !important;
+    margin: 0;
+}
+
+.sib-form .sib-form-container .input {
+    border: 0;
+    outline: 0 !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none !important;
+    line-height: 26px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 99px;
+    padding: 17px 155px 17px 28px;
+    width: 100%;
+    background: #FFFFFF33;
+    color: #fff !important;
+    height: unset !important;
+}
+
+.sib-form .sib-form-container .input::placeholder {
+    color: #fff !important;
+    line-height: 26px;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.sib-form .entry__specification,
+.sib-form .entry__error,
+.entry__specification,
+.entry__label {
+    margin: 0 !important;
+}
+
+.sib-form .entry__error {
+    margin-top: 5px !important;
+}
+
+.sib-form-block {
+    padding: 0;
+}
+
+.sib-optin {
+    display: none;
+}
+
+#sib-form {
+    position: relative;
+}
+
+#sib-form .sib-form-block__button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 12px 32px;
+    line-height: 26px;
+}
+
+.sib-form .clickable__icon {
+    margin: 0 5px 0 0;
+    fill :#fff;
+}
+
+.sib-form-message-panel {
+    border: 0;
+    padding: 0;
+    border-radius: 0px;
+    background: transparent;
+}
+
+#success-message .sib-form-message-panel__inner-text {
+    color: #6BC044;
+}
+
+#success-message svg path {
+    fill: #6BC044;
+}
+
+.ani-y {
+    animation: movedown 3s infinite linear alternate;
+}
+
+@keyframes movedown {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+    50% {
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+    }
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+.ani-x {
+    animation: moveleft 3s infinite linear alternate;
+}
+
+@keyframes moveleft {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+    50% {
+        -webkit-transform: translate(-15px);
+        transform: translate(-15px);
+    }
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
